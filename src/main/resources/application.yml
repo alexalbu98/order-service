@@ -1,3 +1,6 @@
+polar:
+  catalog-service-uri: "http://localhost:9001"
+
 server:
   port: 9002
   shutdown: graceful
