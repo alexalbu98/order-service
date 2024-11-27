@@ -1,4 +1,4 @@
-package com.polarbookshop.order_service.event;
+package com.polarbookshop.order_service.order.event;
 
 import com.polarbookshop.order_service.domain.OrderService;
 import org.slf4j.Logger;
