@@ -10,6 +10,7 @@ import reactor.core.publisher.Flux;
 import java.util.function.Consumer;
 
 //RabbitMQ guarantees at least once delivery, so duplicates can appear.
+
 @Configuration
 public class OrderFunctions {
     private static final Logger log = LoggerFactory.getLogger(OrderFunctions.class);

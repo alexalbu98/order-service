@@ -25,6 +25,7 @@ spring:
     user: ${spring.r2dbc.username}
     password: ${spring.r2dbc.password}
     url: jdbc:postgresql://localhost:5432/polardb_order
+
   cloud:
     function:
       definition: dispatchOrder
@@ -32,14 +33,16 @@ spring:
       bindings:
         dispatchOrder-in-0:
           destination: order-dispatched
-          group: { spring.application.name }
-      acceptOrder-out-0:
-        destination: order-accepted
-  rabbit:
-    bindings:
-      acceptOrder-out-0:
-        producer:
-          transacted: true
+          group: ${spring.application.name}
+        acceptOrder-out-0:
+          destination: order-accepted
+      rabbit:
+        bindings:
+          acceptOrder-out-0:
+            producer:
+              transacted: true
+
+  rabbitmq:
     host: localhost
     port: 5672
     username: user
